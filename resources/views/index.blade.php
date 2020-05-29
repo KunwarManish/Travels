@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/responsive.css">
 
+<link rel="icon" rel="shortcut icon" type="image/logo" href="{{ asset('image/logo.png') }}"> 
+
 </head>
 
 <body>
@@ -893,12 +895,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_11.jpg" alt="https://unsplash.com/@tschax"></div>
+									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_10.jpg" alt="https://unsplash.com/@tschax"></div>
 									<div class="test_icon"><img src="<?php echo url('/'); ?>/images/island_t.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">David Beckham</div>
+												<div class="test_name">Cyrush Pradhan</div>
 												<div class="test_date">June 24, 2019</div>
 											</div>
 											<div class="test_quote_title">" Awesome Journey "</div>
@@ -911,12 +913,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_10.jpg" alt="https://unsplash.com/@seefromthesky"></div>
+									<div class="test_image"><img src="<?php echo url('/'); ?>/images/anish.jpg" alt="https://unsplash.com/@seefromthesky"></div>
 									<div class="test_icon"><img src="<?php echo url('/'); ?>/images/kayak.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">Cyrush Pradhan</div>
+												<div class="test_name">Anish Kunwar</div>
 												<div class="test_date">May 24, 2019</div>
 											</div>
 											<div class="test_quote_title">" Adventure Trips "</div>
@@ -929,12 +931,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_9.jpg" alt=""></div>
+									<div class="test_image"><img src="<?php echo url('/'); ?>/images/ankur.jpg" alt=""></div>
 									<div class="test_icon"><img src="<?php echo url('/'); ?>/images/island_t.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">Rohit Dhimal</div>
+												<div class="test_name">Ankur Pant</div>
 												<div class="test_date">May 24, 2018</div>
 											</div>
 											<div class="test_quote_title">" Best holliday ever "</div>
@@ -947,16 +949,16 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_11.jpg" alt=""></div>
+									<div class="test_image"><img src="<?php echo url('/'); ?>/images/Eliza.jpg" alt=""></div>
 									<div class="test_icon"><img src="<?php echo url('/'); ?>/images/backpack.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">David Beckham</div>
+												<div class="test_name">Eliza</div>
 												<div class="test_date">June 24, 2019</div>
 											</div>
 											<div class="test_quote_title">" Awesome Journey "</div>
-											<p class="test_quote_text">They organised our hotel in Hong Kong on our outward and inward journey.</p>
+											<p class="test_quote_text">They organised our hotel in China on our outward and inward journey.</p>
 										</div>
 									</div>
 								</div>
@@ -965,12 +967,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="<?php echo url('/'); ?>/images/test_10.jpg" alt=""></div>
+									<div class="test_image"><img src="<?php echo url('/'); ?>/images/aabhash.jpg" alt=""></div>
 									<div class="test_icon"><img src="<?php echo url('/'); ?>/images/kayak.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">Cyrush Pradhan</div>
+												<div class="test_name">Aabhash Basnet</div>
 												<div class="test_date">May 24, 2019</div>
 											</div>
 											<div class="test_quote_title">" Adventure Trips "</div>

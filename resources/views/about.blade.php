@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/about_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/about_responsive.css">
 
-
+<link rel="icon" rel="shortcut icon" type="image/logo" href="{{ asset('image/logo.png') }}"> 
 </head>
 
 <body>

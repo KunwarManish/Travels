@@ -536,9 +536,9 @@
 			<div class="row">
 				<div class="col-lg-3 order-lg-1 order-2  ">
 					<div class="copyright_content d-flex flex-row align-items-center">
-						<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<div>
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Desgined </i> by <a href="https://www.linkedin.com/in/manishkunwar/" target="_blank">Manish Kunwar</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+</div>
 					</div>
 				</div>
 				<div class="col-lg-9 order-lg-2 order-1">
@@ -565,7 +565,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="<?php echo url('/'); ?>/styles/bootstrap4/bootstrap.min.js"></script>
 <script src="<?php echo url('/'); ?>/plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="<?php echo url('/'); ?>/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/blog_custom.js"></script>
+<script src="<?php echo url('/'); ?>/js/custom.js"></script>
 
 </body>
 

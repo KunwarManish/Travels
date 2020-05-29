@@ -30,5 +30,8 @@ Auth::routes(['register'=>false]);
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function ()
 {
     Route::get('/', 'AdminController@index')->name('admin_home');
-
+    Route::get('/user','AdminController@registered')->name('admin.user'); 
+    Route::get('/edit/{id}','AdminController@registeredit')->name('admin.editUser');
+    Route::put('/update/{id}','AdminController@registerupdate');
+    Route::get('/delete/{id}','AdminController@registerdelete')->name('admin.deleteUser');
 });
