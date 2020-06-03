@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\hotel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,7 +38,8 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $hotel = hotel::all();
+        return view('blog', compact($hotel, 'hotel'));
     }
 
     public function contact()

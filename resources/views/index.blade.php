@@ -52,7 +52,7 @@
 										<a href="{{ route('logout') }}"
                                              onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                 {{ __('Logout') }}
+                                                 {{ __('Logout') }} 
                                        </a>
                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
@@ -80,14 +80,14 @@
 				<div class="row">
 					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="<?php echo url('/'); ?>/images/logo.png" alt="">travels</a></div>
+							<div class="logo"><a href="/"><img src="<?php echo url('/'); ?>/images/logo.png" alt="">travels</a></div>
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="/">home</a></li>
 								<li class="main_nav_item"><a href="/aboutus">about us</a></li>
 								<li class="main_nav_item"><a href="/offers">offers</a></li>
-								<li class="main_nav_item"><a href="/blog">news</a></li>
+								<li class="main_nav_item"><a href="/blog">hotel</a></li>
 								<li class="main_nav_item"><a href="/contact">contact</a></li>
 							</ul>
 						</div>
@@ -115,8 +115,9 @@
 							</svg>
 						</div>
 
-						<form id="search_form" class="search_form bez_1">
-							<input type="search" class="search_content_input bez_1">
+						<form id="search_form" action="/search" method="Post" class="search_form bez_1">
+							@csrf
+							<input type="search" name="hotel" class="search_content_input bez_1">
 						</form>
 
 						<div class="hamburger">
@@ -132,12 +133,12 @@
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
 			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<div class="logo menu_logo"><a href="#"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""></a></div>
+			<div class="logo menu_logo"><a href="/"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""></a></div>
 			<ul>
 				<li class="menu_item"><a href="/">home</a></li>
 				<li class="menu_item"><a href="/aboutus">about us</a></li>
 				<li class="menu_item"><a href="/offers">offers</a></li>
-				<li class="menu_item"><a href="/blog">news</a></li>
+				<li class="menu_item"><a href="/blog">hotel</a></li>
 				<li class="menu_item"><a href="/contact">contact</a></li>
 			</ul>
 		</div>
@@ -261,18 +262,19 @@
 					<div class="search_tabs_container">
 						<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/suitcase.png" alt=""><span>hotels</span></div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/bus.png" alt="">car rentals</div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/departure.png" alt="">flights</div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/island.png" alt="">trips</div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/cruise.png" alt="">cruises</div>
-							<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/diving.png" alt="">activities</div>
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/bus.png" alt="">car rentals</div> -->
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/departure.png" alt="">flights</div> -->
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/island.png" alt="">trips</div> -->
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/cruise.png" alt="">cruises</div> -->
+							<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="<?php echo url('/'); ?>/images/diving.png" alt="">activities</div> -->
 						</div>		
 					</div>
 
 					<!-- Search Panel -->
 
 					<div class="search_panel active">
-						<form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						<form id="search_form" action="/search" method="Post" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						
 							<div class="search_item">
 								<div>destination</div>
 								<input type="text" class="destination search_input" required="required">
@@ -301,7 +303,9 @@
 									<option>03</option>
 								</select>
 							</div>
-							<button class="button search_button">search<span></span><span></span><span></span></button>
+							@csrf
+							<button type="search" name="hotel" class="button search_button">search<span></span><span></span><span></span></button>
+			
 						</form>
 					</div>
 
@@ -1161,7 +1165,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<li class="footer_nav_item"><a href="/">home</a></li>
 								<li class="footer_nav_item"><a href="/aboutus">about us</a></li>
 								<li class="footer_nav_item"><a href="/offers">offers</a></li>
-								<li class="footer_nav_item"><a href="/blog">news</a></li>
+								<li class="footer_nav_item"><a href="/blog">hotel</a></li>
 								<li class="footer_nav_item"><a href="/contact">contact</a></li>
 							</ul>
 						</div>

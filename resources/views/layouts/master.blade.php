@@ -19,6 +19,8 @@
   <link href="../../adminpanel/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../../adminpanel/assets/demo/demo.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ asset('adminpanel/assets/css/dataTables.min.css')}}">
 </head>
 
 <body class="">
@@ -40,19 +42,13 @@
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="">
               <i class="now-ui-icons education_atom"></i>
-              <p>Icons</p>
+              <p>Reviews</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
-              <i class="now-ui-icons location_map-big"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
+            <a href=" {{route('admin.hotel')}} ">
               <i class="now-ui-icons travel_istanbul"></i>
               <p>Hotel Profile</p>
             </a>
@@ -61,12 +57,6 @@
             <a href=" {{route('admin.user')}} ">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
-            </a>
-          </li>
-          <li class="active ">
-            <a href="">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Table List</p>
             </a>
           </li>
         </ul>
@@ -167,6 +157,9 @@
   <script src="../../adminpanel/assets/js/core/jquery.min.js"></script>
   <script src="../../adminpanel/assets/js/core/popper.min.js"></script>
   <script src="../../adminpanel/assets/js/core/bootstrap.min.js"></script>
+
+  <script src="{{ asset('adminpanel/assets/js/dataTables.min.js')}}"></script>
+
   <script src="../../adminpanel/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>

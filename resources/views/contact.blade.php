@@ -77,18 +77,19 @@
 				<div class="row">
 					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="<?php echo url('/'); ?>/images/logo.png" alt="">travels</a></div>
+							<div class="logo"><a href="/"><img src="<?php echo url('/'); ?>/images/logo.png" alt="">travels</a></div>
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="/">home</a></li>
 								<li class="main_nav_item"><a href="/aboutus">about us</a></li>
 								<li class="main_nav_item"><a href="/offers">offers</a></li>
-								<li class="main_nav_item"><a href="/blog">news</a></li>
+								<li class="main_nav_item"><a href="/blog">hotel</a></li>
 								<li class="main_nav_item"><a href="/contact">contact</a></li>
 							</ul>
 						</div>
-						<div class="content_search ml-lg-0 ml-auto">
+						
+						<!-- <div class="content_search ml-lg-0 ml-auto">
 							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 								<g>
@@ -110,10 +111,11 @@
 									</g>
 								</g>
 							</svg>
-						</div>
+						</div> -->
 
-						<form id="search_form" class="search_form bez_1">
-							<input type="search" class="search_content_input bez_1">
+						<form id="search_form" action="/search" method="Post" class="search_form bez_1">
+							@csrf
+							<input type="search" name="hotel" class="search_content_input bez_1">
 						</form>
 						
 						<div class="hamburger">
@@ -129,13 +131,13 @@
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
 			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<div class="logo menu_logo"><a href="#"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""></a></div>
+			<div class="logo menu_logo"><a href="/"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="index.html">home</a></li>
-				<li class="menu_item"><a href="about.html">about us</a></li>
-				<li class="menu_item"><a href="offers.html">offers</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
+				<li class="menu_item"><a href="/">home</a></li>
+				<li class="menu_item"><a href="/about">about us</a></li>
+				<li class="menu_item"><a href="/offers">offers</a></li>
+				<li class="menu_item"><a href="/blog">hotel</a></li>
+				<li class="menu_item"><a href="/contact">contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -369,7 +371,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<li class="footer_nav_item"><a href="/">home</a></li>
 								<li class="footer_nav_item"><a href="/aboutus">about us</a></li>
 								<li class="footer_nav_item"><a href="/offers">offers</a></li>
-								<li class="footer_nav_item"><a href="/blog">news</a></li>
+								<li class="footer_nav_item"><a href="/blog">hotel</a></li>
 								<li class="footer_nav_item"><a href="/contact">contact</a></li>
 							</ul>
 						</div>
