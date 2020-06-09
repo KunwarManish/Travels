@@ -159,7 +159,7 @@
 				<div class="col">
 
 					<!-- Contact Form -->
-					<div class="contact_form_container">
+					<!-- <div class="contact_form_container">
 						<div class="contact_title text-center">get in touch</div>
 						<form action="#" id="contact_form" class="contact_form text-center">
 							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
@@ -168,7 +168,7 @@
 							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
 							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200">send message<span></span><span></span><span></span></button>
 						</form>
-					</div>
+					</div> -->
 
 				</div>
 			</div>

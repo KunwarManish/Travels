@@ -26,6 +26,7 @@ Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::post('/search','HotelController@search')->name('search');
 Route::get('/hotel-details/{id}','HotelController@details');
+Route::post('/reviews','HotelreviewController@reviews');
 
 
 
@@ -46,5 +47,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function ()
 
     Route::put('/hotel-update/{id}','HotelController@update');
     Route::delete('/hotel-delete/{id}','HotelController@delete')->name('admin.deletehotel');
+    
+    Route::get('/hotel-reviews','HotelreviewController@review')->name('admin.hotelreviews');
 });
 

@@ -26,7 +26,7 @@
                     <label>Price</label> $
                     <input type="text" class="form-control" name="price" placeholder="Enter Price" required>
                 </div>
-
+                
                 <div class="form-group">
                     <label>Description</label>
                     <input type="text" class="form-control" name="description" placeholder="Enter Description" required>
@@ -36,10 +36,9 @@
                     <label>Location</label>
                     <input type="text" class="form-control" name="location" placeholder="Enter Location" required>
                 </div>
-
-                <div class="form-group">
+                <div class="form-">
                     <label>Upload Image</label>
-                    <input type="file" class="form-control" id="img" name="img">
+                    <input type="file" class="form-" id="img" name="img">
                 </div>
                 
             </div>
@@ -97,7 +96,7 @@
                              {{ $data->location }}
                             </div>
                         </td>
-                        <td><img src="/storage/{{$data->img}} " alt=""></td>
+                        <td><img src="/storage/{{$data->img}} " class="w-100" alt=""></td>
                         <td>
                             <a href="{{ url('/admin/hotel/' .$data->id) }}" class="btn btn-sucess">EDIT</a>
                         </td>

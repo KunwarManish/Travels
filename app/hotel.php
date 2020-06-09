@@ -12,3 +12,4 @@ class hotel extends Model
 ];
 
 }
+

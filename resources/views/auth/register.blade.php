@@ -192,7 +192,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group {{ $errors->has('current_password') ? ' has-error' : '' }}">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password">
                             </div>

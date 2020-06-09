@@ -15,26 +15,26 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="name" value="{{ $hotel->name}}">
+                            <input type="text" class="form-control" name="name" value="{{ $hotel->name}}" required autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label>Price</label> $
-                            <input type="text" class="form-control" name="price" value="{{ $hotel->price}}">
+                            <input type="text" class="form-control" name="price" value="{{ $hotel->price}}" required autocomplete="price">
                         </div>
 
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" name="description" value="{{ $hotel->description}}">
+                            <input type="text" class="form-control" name="description" value="{{ $hotel->description}}" required autocomplete="description">
                         </div>
 
                         <div class="form-group">
                             <label>Location</label>
-                            <input type="text" class="form-control" name="location" value="{{ $hotel->location}}">
+                            <input type="text" class="form-control" name="location" value="{{ $hotel->location}}" required autocomplete="location">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-">
                             <label>Upload Image</label>
-                            <input type="file" class="form-control" id="img" name="img" value="{{ $hotel->img}}">
+                            <input type="file" class="form-control" id="img" name="img" value="{{ $hotel->img}}" required autocomplete="image">
                             <img src="/storage/{{$hotel->img}} " height = "60" weight = "60">
                         </div>
                         

@@ -27,9 +27,9 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="orange"><!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini" href="#"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""> 
+        <a href="" class="simple-text logo-mini" href="/"><img src="<?php echo url('/'); ?>/images/logo.png" alt=""> 
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="" class="simple-text logo-normal">
           Travels
         </a>
       </div>
@@ -42,9 +42,9 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{route('admin.hotelreviews')}} ">
               <i class="now-ui-icons education_atom"></i>
-              <p>Reviews</p>
+              <p>Hotel Reviews</p>
             </a>
           </li>
           <li>
@@ -76,7 +76,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Table List</a>
+            <a class="navbar-brand" href="#pablo"></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -84,7 +84,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
+            <!-- <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
@@ -93,7 +93,7 @@
                   </div>
                 </div>
               </div>
-            </form>
+            </form> -->
             <ul class="navbar-nav">
             
               <li class="nav-item dropdown">

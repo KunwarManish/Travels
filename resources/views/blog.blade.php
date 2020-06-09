@@ -158,7 +158,7 @@
 					<div class="card shadow">
 						<img src="/storage/{{$hotel->img}} " class="card-img-top" height="200">
 						<div class="card-body">
-							<h5 class="card-title font-weight-bold">{{$hotel->name}}</h5>
+							<h5 class="card-title intro_centere text-center font-weight-bold">{{$hotel->name}}</h5>
 							<h5 class="card-title"><span class="font-weight-bold">$</span> {{$hotel->price}}</h5>
 							<h5 class="card-title">{{$hotel->description}}</h5>
 							<h5 class="card-title">{{$hotel->location}}</h5>

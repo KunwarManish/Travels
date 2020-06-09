@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\hotel;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class HotelController extends Controller
@@ -111,8 +113,12 @@ class HotelController extends Controller
         {
 
         $hotel = hotel::findOrFail($id);
-        return view('hotel-details')
+        // $user = User::all();
+        // echo "<pre>"; print_r($user);die; 
+        $relateHotel=hotel::where([['id','!=',$id],['location',$hotel->location]])->get();
+        return view('hotel-details',compact('relateHotel'))
         ->with('hotel', $hotel);
         }
 
+        
 }
