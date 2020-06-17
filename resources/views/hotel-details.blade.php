@@ -13,8 +13,58 @@
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/offers_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/styles/offers_responsive.css">
+<link rel="stylesheet" href="<?php echo url('/'); ?>/http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
 
 <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+div.stars{
+  width: 270px;
+  display: inline-block;
+}
+ 
+input.star{
+  display: none;
+}
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 30px;
+  color: #444;
+  transition: all .2s;
+}
+ 
+input.star:checked ~ label.star:before {
+  content:'\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+ 
+ 
+input.star-5:checked ~ label.star:before {
+  color:#FE7;
+  text-shadow: 0 0 10px #952;
+}
+ 
+input.star-1:checked ~ label.star:before {
+  color: #F62;
+}
+ 
+label.star:hover{
+  transform: rotate(-15deg) scale(1.3);
+}
+ 
+label.star:before{
+  content:'\f006';
+  font-family: FontAwesome;
+}
+ 
+input.star:checked ~ .rev-box{
+  height: 125px;
+  overflow: visible;
+}
+
 .recommended_items {
   overflow: hidden;
 }
@@ -181,106 +231,121 @@
 	</div>
 
 	<!-- Offers -->
+	<div class="container my-5 z-depth-1">
+	<div class="offers_item rating_3">
+							<div class="row">
+								<div class="col-lg-1 temp_col"></div>
+								<div class="col-lg-3 col-1680-4">
+									<div class="offers_image_container">
+										<!-- Image -->
+										<div class="offers_image_background" style="background-image:url(<?php echo url('/'); ?>/storage/{{$hotel->img}})"></div>
+										<div class="offer_name"><a href="single_listing.html">{{$hotel->name}}</a></div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<div class="offers_content">
+										<div class="offers_price">$</span>{{$hotel->price}}<span>per night</span></div>
+										
+											
+										</div>
+										<p class="offers_text">{{$hotel->description}}</p>
+										
+										<h4 class="font-weight-bold ">{{$hotel->location}}</h4></span>
+										<br>
+										<h3 class="font-weight-bold"> Write a review about hotel </h3>
+										<form action="/reviews" method="post">
+											@csrf
+												<label style="float:left;"><h4>Rate this Hotel :</h4></label> 
+												<div style="margin-top:-25px; float:left;">
+												<div class="stars">
+													
+														<input class="star star-5" id="star-5" type="radio" name="rating" value='5'/>
+														<label class="star star-5" for="star-5"></label>
+														<input class="star star-4" id="star-4" type="radio" name="rating" value='4'/>
+														<label class="star star-4" for="star-4"></label>
+														<input class="star star-3" id="star-3" type="radio" name="rating" value='3'/>
+														<label class="star star-3" for="star-3"></label>
+														<input class="star star-2" id="star-2" type="radio" name="rating" value='2'/>
+														<label class="star star-2" for="star-2"></label>
+														<input class="star star-1" id="star-1" type="radio" name="rating" value='1'/>
+														<label class="star star-1" for="star-1"></label>
+													
+													</div>
+													</div>
+													<div style="clear:both;"></div>
+													<input type='hidden' name="hotelid" value="{{$hotel->id}}"/>
+													<div class="form-group shadow-textarea">
+													<label for="exampleFormControlTextarea6"></label>
+													<textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" name="reviews" rows="3" placeholder="Write something here..."></textarea>
+													</div>
+
+													<div class="md-form">
+														<input type="text" name="name" id="form100" placeholder="Enter your name" class="form-control">
+													</div>
+												    <br>
+													<button type="submit" value="Submit" class="btn btn-warning">Submit</button>
+												<!-- <input type="submit" value="Submit" style="background:green;height:20px;background: #120c4e;height: 30px;color: white;">  -->
+												
+												</form> 
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 
 	<div class="container">
-<!-- Offers Item -->
-
-	<div class="offers_item rating_4">
-		<div class="row" >
-			<div class="col-lg-1 temp_col"></div>
-				<div class="col-md-4 py-3 px-3">
-					<div class="offers_image_container">
-						<img src="/storage/{{$hotel->img}} " class="card-img-top" height="300px" width="300px">
-					</div>
-				</div>
-			<div class="col-lg-8">
-			           <div class="card-body">
-							<h5 class="card-title font-weight-bold">{{$hotel->name}}</h5>
-							<h5 class="card-title"><span class="font-weight-bold">$</span> {{$hotel->price}}</h5>
-							<h5 class="card-title">{{$hotel->description}}</h5>
-							<h5 class="card-title">{{$hotel->location}}</h5>
+		<div class="offers_item rating_4">
+			<div class="row" >
+				<div class="container">
+					<!-- Section heading -->
+					<h2 class="font-weight-bold text-center mb-5">Hotel Reviews</h2>
+					@foreach($reviews as $review)
+						<!--Section: Block Content-->
+					<section class="dark-grey-text">
+						<div class="media mb-2">
+							<div class="media-body">
+								<h5 class="user-name font-weight-bold">{{$review->name}}</h5>
+								<!-- Rating -->
+									<ul class="rating">
+										<li>
+											<i class="fa fa-star blue-text"><p>Rating {{$review->rating}}</p></i>
+										</li>
+										
+										<li>
+											<p class="dark-grey-text article">{{$review->reviews}}</p>
+										</li>
+									</ul>
+							</div>
 						</div>
-				<h4> Write a review about hotel </h4>
-			<form action="/reviews" method="post">
-			@csrf
-				<label style="float:left;">Rate this Hotel :</label> <br>
-				<div style="margin-top:-20px;float:left;">
-				
-					<div style="float:left;margin-right:5px;">
-						<img src="/images/star.png" style="width:15px;height:15px;"/>
-					</div>
-
-				<input class="star star-5" id="star-5" type="radio" name="rating" value='5'/>
-				<label class="star star-5" for="star-5"></label>
-				<input class="star star-4" id="star-4" type="radio" name="rating" value='4'/>
-				<label class="star star-4" for="star-4"></label>
-				<input class="star star-3" id="star-3" type="radio" name="rating" value='3'/>
-				<label class="star star-3" for="star-3"></label>
-				<input class="star star-2" id="star-2" type="radio" name="rating" value='2'/>
-				<label class="star star-2" for="star-2"></label>
-				<input class="star star-1" id="star-1" type="radio" name="rating" value='1'/>
-				<label class="star star-1" for="star-1"></label>
+					</section>
 				</div>
-
-
-				<div style="clear:both;"></div>
-		        <input type='hidden' name="hotelid" value="{{$hotel->id}}"/>
-			<div>
-				<textarea rows="4" cols="50" name="reviews" placeholder="Write something"></textarea>  
-	        </div>
-			<input type='text' name="name" value="" placeholder="Enter your name"/>
-			  <br/>
-			  <input type="submit" value="Submit" style="background:green;height:20px;background: #120c4e;height: 30px;color: white;"> 
-			</form> 
+			@endforeach
 			</div>
-		</div>
+		</div>	
 	</div>
-</div>
-<div class="container">
-<div class="row">
-<div class="col-lg-1 temp_col"></div>
-<div class="col-md-4 py-3 px-3">
+    
 
-<div class="recommended_items"><!--recommended_items-->
-            <h2 class="title text-center">RECOMMENDED HOTELS</h2>
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <?php $count=1;?>
-                    @foreach($relateHotel->chunk(3) as $chunk)
-                        <div <?php if($count==1){ ?> class="item active" <?php } else {
-                              ?> class="item" <?php } ?>>
-                            @foreach($chunk as $item)
-                                <div class="col-lg-8">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="/storage/{{$item->img}}" alt="No image" style="width: 200px;"/>
-                                                <h2>{{$item->name}}</h2>
-                                                <p>{{$item->location}}</p>
-                                                <button type="button" class="btn btn-default primary"><i class=""></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+
+
+ <div class="container mt-5">
+            <h2 class="font-weight-bold text-center mb-5">Recommended Hotels</h2>
+            <div class="row">
+			
+                @foreach($relateHotel->chunk(2) as $chunk)
+                    @foreach($chunk as $item)
+                        <div class="col-md-3">
+                            <img src="/storage/{{$item->img}}" alt="No image" style="height: 150px; width: 200px;"/>
+                            <h3 class="font-weight-bold">{{$item->name}}</h3>
+                            <h4 class="font-weight-bold ">{{$item->location}}</h4>
+                            
                         </div>
-                        <?php $count++; ?>
                     @endforeach
-                </div>
-				
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                @endforeach  
             </div>
-        </div><!--/recommended_items-->
-</div>
+        </div>
 </div>
 
-
-</div>
 
 	<!-- Footer -->
 
@@ -432,6 +497,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="<?php echo url('/'); ?>/plugins/easing/easing.js"></script>
 <script src="<?php echo url('/'); ?>/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="<?php echo url('/'); ?>/js/offers_custom.js"></script>
+
+
 
 </body>
 
